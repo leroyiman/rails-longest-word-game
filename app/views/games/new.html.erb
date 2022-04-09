@@ -1,0 +1,10 @@
+<h1 style="font-size: 50px; padding: 0 10px;">NEW GAME!</h1>
+<div style="display:flex" >
+<% @letters.each do  |letter|   %>
+<h2 style="padding: 0 10px; font-size: 30px; background-color: blue; color: white; margin: 0 1px;"> <%= letter %></h2>
+<% end %>
+</div>
+<form action="/score" style="margin: 20px 0;" <%= hidden_field_tag :authenticity_token, form_authenticity_token %>>
+  <input type="text" name="word" style="width: 300px; height: 50px; border-radius: 5px;">
+  <input type="submit" value="What is the word?" style="width: 150px; height: 50px; border-radius: 5px;">
+</form>
